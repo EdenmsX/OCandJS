@@ -12,6 +12,8 @@
 
 #import "lbJsObject.h"
 
+#import "WKViewController.h"
+
 
 
 @interface ViewController () <UIWebViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -35,6 +37,9 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStylePlain target:self action:@selector(rightBtnClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"WK" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnClick)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
     self.webview = [[UIWebView alloc] initWithFrame:self.view.bounds];
     self.webview.delegate = self;
     [self.view addSubview:self.webview];
@@ -44,6 +49,12 @@
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [self.webview loadRequest:req];
 }
+- (void)leftBtnClick {
+    
+    WKViewController *vc = [[WKViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (void)rightBtnClick {
     NSLog(@"right click");
