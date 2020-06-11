@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OC与JS交互</title>
+    <script>
+        function showAlert(name){
+            alert(name);
+            return function handle(){
+                alert('我是一个弹窗'+name);
+                return name + '返回给OC';
+                }
+            }
+    function pushSubmit(){
+        showMessage("123 "+ arr)
+    }
+    
+    function submit(){
+        alert('submit 弹窗');
+    }
+    
+    function ocCalljs(dict){
+        var name = dict['name'];
+        var age  = dict['age'];
+        alert(name + age);
+        // 传回去
+        showDict(dict)
+    }
+    
+    function openAlbumImage(){
+        getImage();
+<!--        lbObject.letJSImage('123');-->
+<!--        alert(lbObject.getSum(10,20));-->
+    }
+    
+    function showImage(imageDataStr){
+        var img = document.getElementById("image1");
+        img.innerHTML = "<image style='width:200px;' src='data:image/png;base64,"+imageDataStr+"'>";
+    }
+    </script>
+</head>
+<body>
+    
+    <a href="test://getSum:/helloword/js">点击跳转效应OC方法</a>
+    
+    <a href="test://getPlus/helloword/js">点击跳转效应</a>
+
+    <form id="myform" action="test://www.baidu.com/hello/j/abc/user" method="get">
+        <input id="submit" type="submit" value="我是提交">
+    </form>
+    <input type="button" value="弹框" onclick="showAlert('hello JS')"><br/>
+    <input type="button" value="弹框2" onclick="pushSubmit()" /><br/><br/>
+    <input type="button" value="弹框3" onclick="openAlbumImage()" /><br/>
+    
+    <div id="image1"></div>
+</body>
+</html>
