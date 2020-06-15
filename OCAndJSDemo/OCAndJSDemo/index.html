@@ -56,6 +56,40 @@
         iFrame.parentNode.removeChild(iFrame);
         iFrame = null;
     }
+    
+    
+    
+    
+    
+    
+<!--    WebViewJavascriptBridge 必须实现这段代码-->
+    function setupWebViewJavascriptBridge(callback) {
+           if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+           if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+           window.WVJBCallbacks = [callback];
+           var WVJBIframe = document.createElement('iframe');
+           WVJBIframe.style.display = 'none';
+           WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+           document.documentElement.appendChild(WVJBIframe);
+           setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+       }
+    
+<!--    oc调用JS-->
+        setupWebViewJavascriptBridge(function(bridge) {
+         // JS 被调用的方法  OCCallJSFunction 定义的标识
+            bridge.registerHandler('OCCallJSFunction', function(data, responseCallback) {
+                alert('JS方法被调用:'+data);
+                
+                                   
+                responseCallback('js执行过了');
+            })
+         })
+<!--    js调用OC-->
+    function showWBJ(){
+        WebViewJavascriptBridge.callHandler('jsCallsOC', {'test': '18'}, function(response) {
+             alert(response);
+         })
+    }
     </script>
 </head>
 <body>
@@ -70,7 +104,8 @@
     <input type="button" value="弹框" onclick="showAlert('hello JS')"><br/>
     <input type="button" value="弹框2" onclick="pushSubmit()" /><br/><br/>
     <input type="button" value="弹框3" onclick="openAlbumImage()" /><br/><br/>
-    <input type="button" value="messgaeHandle" onclick="messgaeHandle()" /><br />
+    <input type="button" value="messgaeHandle" onclick="messgaeHandle()" /><br /><br/><br/>
+    <input type="button" value="showWBJ" onclick="showWBJ()" /><br /><br/><br/>
     
     <div id="image1"></div>
 </body>

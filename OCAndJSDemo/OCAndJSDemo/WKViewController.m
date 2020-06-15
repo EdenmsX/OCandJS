@@ -9,6 +9,8 @@
 #import "WKViewController.h"
 #import <WebKit/WebKit.h>
 
+#import "WebViewBrigdeViewController.h"
+
 @interface WKViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 /** webview */
@@ -22,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"brigde" style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+    self.navigationItem.rightBarButtonItem = leftItem;
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     //如果不做如下的config配置,加载出来的web页面的内容会特别小
@@ -40,6 +44,11 @@
 //    NSURLRequest *requet = [NSURLRequest requestWithURL:url];
 //    [self.webView loadRequest:requet];
     [self.webView loadFileURL:url allowingReadAccessToURL:url];
+}
+
+- (void)leftItemClick {
+    WebViewBrigdeViewController *vc = [[WebViewBrigdeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

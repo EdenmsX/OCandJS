@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		376AE25924908E3B0009D6F1 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 376AE25824908E3B0009D6F1 /* index.html */; };
 		376AE2A3249214070009D6F1 /* lbJsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 376AE2A2249214070009D6F1 /* lbJsObject.m */; };
 		376AE2A6249226070009D6F1 /* WKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376AE2A5249226070009D6F1 /* WKViewController.m */; };
+		376AE2A9249749AE0009D6F1 /* WebViewBrigdeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376AE2A8249749AE0009D6F1 /* WebViewBrigdeViewController.m */; };
 		CE55A9A7471C0B28099DC01C /* Pods_OCAndJSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7409EB05E8BB659F6C4BEA1A /* Pods_OCAndJSDemo.framework */; };
 		EF2A352B93880D04FE2EA357 /* Pods_OCAndJSDemo_OCAndJSDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F11BBAE9B3A9A4094BAF92B /* Pods_OCAndJSDemo_OCAndJSDemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,8 @@
 		376AE2A2249214070009D6F1 /* lbJsObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lbJsObject.m; sourceTree = "<group>"; };
 		376AE2A4249226070009D6F1 /* WKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKViewController.h; sourceTree = "<group>"; };
 		376AE2A5249226070009D6F1 /* WKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKViewController.m; sourceTree = "<group>"; };
+		376AE2A7249749AE0009D6F1 /* WebViewBrigdeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewBrigdeViewController.h; sourceTree = "<group>"; };
+		376AE2A8249749AE0009D6F1 /* WebViewBrigdeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewBrigdeViewController.m; sourceTree = "<group>"; };
 		666D6F770D411422DB2EBA1A /* Pods-OCAndJSDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAndJSDemoTests.release.xcconfig"; path = "Target Support Files/Pods-OCAndJSDemoTests/Pods-OCAndJSDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7409EB05E8BB659F6C4BEA1A /* Pods_OCAndJSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCAndJSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86B9984CEC150DA071DDB79 /* Pods-OCAndJSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCAndJSDemo.release.xcconfig"; path = "Target Support Files/Pods-OCAndJSDemo/Pods-OCAndJSDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				376AE228249085100009D6F1 /* ViewController.m */,
 				376AE2A4249226070009D6F1 /* WKViewController.h */,
 				376AE2A5249226070009D6F1 /* WKViewController.m */,
+				376AE2A7249749AE0009D6F1 /* WebViewBrigdeViewController.h */,
+				376AE2A8249749AE0009D6F1 /* WebViewBrigdeViewController.m */,
 				376AE22A249085100009D6F1 /* Main.storyboard */,
 				376AE22D249085160009D6F1 /* Assets.xcassets */,
 				376AE22F249085160009D6F1 /* LaunchScreen.storyboard */,
@@ -187,7 +192,6 @@
 				D496B74610A5D0F0F116124D /* Pods-OCAndJSDemoTests.debug.xcconfig */,
 				666D6F770D411422DB2EBA1A /* Pods-OCAndJSDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -434,6 +438,7 @@
 				376AE229249085100009D6F1 /* ViewController.m in Sources */,
 				376AE223249085100009D6F1 /* AppDelegate.m in Sources */,
 				376AE234249085160009D6F1 /* main.m in Sources */,
+				376AE2A9249749AE0009D6F1 /* WebViewBrigdeViewController.m in Sources */,
 				376AE226249085100009D6F1 /* SceneDelegate.m in Sources */,
 				376AE2A3249214070009D6F1 /* lbJsObject.m in Sources */,
 			);
